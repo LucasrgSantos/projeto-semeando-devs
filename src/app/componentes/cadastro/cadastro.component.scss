@@ -1,0 +1,98 @@
+.container {
+    background: linear-gradient(45deg,  rgba(126, 191, 221, 0.795), lightgrey, rgba(126, 191, 221, 0.795));
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+div.card-body {
+    background: linear-gradient(45deg,  rgba(126, 191, 221, 0.795), lightgrey, rgba(126, 191, 221, 0.795));
+}
+
+input {
+    margin: 5%;
+}
+
+input {
+    width: 90%;
+}
+
+.error-placeholder {
+    height: 1.5em;
+}
+
+.my-label {
+    white-space: nowrap;
+    font-weight: bold;
+
+    margin-left: 5%;
+    margin-bottom: -5%;
+}
+
+label.my-label-select {
+    margin-left: 5%;
+
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.dataNascimento-error {
+    display: block;
+    min-height: 1.25rem; 
+}
+
+.custom-select {
+    border: 1px solid #ced4da; 
+    border-radius: 9px; 
+    padding: 8px; 
+    font-size: 14px; 
+    color: #333; 
+    width: 90%; 
+    max-width: 100%; 
+    
+    margin-left: 5%;
+}
+
+#uf,#cidade {
+    margin-bottom: 5%;
+}
+
+
+.text-danger {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -5%;
+    margin-left: 5%;
+}
+
+.is-invalid {
+    border-color: red;
+}
+  
+//responsividade
+@media screen and (max-width: 767px) {
+
+    div.card-body {
+        min-height: 110vh;
+    }
+    
+    #nome {
+        width: 90%;
+    }
+
+    #cpf {
+        width: 45%;
+    }
+
+    #dataNascimento {
+        width: 45%;
+    }
+
+    #uf {
+        width: 90%;
+    }
+
+    #telefone {
+        width: 45%;
+    }
+
+}

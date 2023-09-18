@@ -1,0 +1,19 @@
+<div class="container-padrao">
+    <div class="texto-padrao">
+        <h3 class="titulo">Olá! Seja bem vindo(a) à cidade de Pato Branco! É um prazer vê-lo por aqui.</h3>
+        <h6 class="sub-titulo">Preencha esse breve formulário e ganhe 10% de desconto na sua corrida com um dos nossos
+            taxistas credenciados.</h6>
+        <form>
+            <div class="termos">
+                <input type="checkbox" name="termos" [checked]="termosAceitos" (change)="termosAceitos = !termosAceitos" required>
+                <label class="checkbox-label">
+                    <span class="custom-checkbox"></span>
+                    Eu li e concordo com os
+                    <a [routerLink]="'/inicio/termos'">termos de uso</a>
+                </label>
+            </div>
+            <br>
+            <button type="button" class="btn btn-success" routerLink="./cadastro" [disabled]="!termosAceitos">Ir para o formulário</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.card {
+    background: linear-gradient(45deg,  rgba(126, 191, 221, 0.795), lightgrey, rgba(126, 191, 221, 0.795));
+}
+
+h4 {
+    font-weight: 600;
+}
+
+label {
+    font-weight: 500;
+}
+
+div.text-danger {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+    .body {
+        padding-top: 80%;
+    }
+}

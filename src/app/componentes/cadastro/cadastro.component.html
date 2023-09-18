@@ -1,0 +1,97 @@
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="card my-auto" style="max-width: 500px;">
+    <div class="card-body">
+      <h3 class="text-center fw-bold pb-3">Todos os campos a seguir são de preenchimento obrigatório.</h3>
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <div class="row">
+
+          <div class="col-12">
+            <div class="d-flex flex-column">
+              <label for="nome" class="my-label">Nome Completo:</label>
+              <input type="text" id="nome" placeholder="Ex: Lucas Renato Gomes dos Santos" 
+                class="form-control" [class.is-invalid]="botaoAvancarClicado && form.get('nome')?.invalid" formControlName="nome" (input)="formataNome()" minlength="5">
+              <div *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched" class="text-danger nome-error">Informe seu nome.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="d-flex flex-column">
+              <label for="cpf" class="my-label">CPF:</label>
+              <input appMascaraCpf type="text" id="cpf" placeholder="___.___.___-__" 
+                class="form-control" [class.is-invalid]="(botaoAvancarClicado && form.get('cpf')?.invalid) || (form.get('cpf')?.touched && form.get('cpf')?.hasError('invalidCPF'))" formControlName="cpf" maxlength="14">  
+              <div *ngIf="(botaoAvancarClicado && form.get('cpf')?.invalid) || (form.get('cpf')?.touched && form.get('cpf')?.hasError('invalidCPF'))" class="text-danger cpf-error">
+                {{ form.get('cpf')?.hasError('invalidCPF') ? 'CPF inválido' : 'Informe seu CPF' }}
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="d-flex flex-column">
+              <label for="dataNascimento" class="my-label">Data de Nascimento:</label>
+              <input type="text" id="dataNascimento" placeholder="__/__/____"
+                class="form-control" [class.is-invalid]="botaoAvancarClicado && form.get('dataNascimento')?.invalid"
+                formControlName="dataNascimento" (input)="formatarData($event)">
+              <div *ngIf="form.get('dataNascimento')?.touched" class="text-danger dataNascimento-error">
+                <ng-container *ngIf="form.get('dataNascimento')?.hasError('required')">Informe a Data de Nascimento.</ng-container>
+                <ng-container *ngIf="form.get('dataNascimento')?.hasError('invalidDate')">Data inválida.</ng-container>
+                <ng-container *ngIf="form.get('dataNascimento')?.hasError('invalidAgeRange')">Idade não atende os requisitos.</ng-container>
+              </div>
+            </div>
+          </div>                      
+
+          <div class="col-12">
+            <div class="d-flex flex-column">
+              <label for="uf" class="my-label-select">UF:</label>
+              <select id="uf" class="custom-select" (change)="onUFSelect($event)" 
+                [class.is-invalid]="botaoAvancarClicado && form.get('uf')?.invalid" formControlName="uf">
+                <option value="" disabled selected hidden>Selecione a UF</option>
+                <option *ngFor="let uf of ufs" [value]="uf.sigla">{{ uf.nome }}</option>
+              </select>              
+              <div *ngIf="form.get('uf')?.invalid && form.get('uf')?.touched" class="text-danger uf-error">Selecione uma UF.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="d-flex flex-column">
+              <label for="cidade" class="my-label-select">Cidade:</label>
+              <select id="cidade" class="custom-select" 
+                [class.is-invalid]="botaoAvancarClicado && form.get('cidade')?.invalid" formControlName="cidade">
+                <optgroup *ngIf="!form.controls['uf'].value" label="Selecione a UF primeiro">
+                  <option value="" disabled selected hidden>Selecione a UF para exibir as opções</option>
+                </optgroup>
+                <option *ngFor="let cidade of cidades" [value]="cidade.nome">{{ cidade.nome }}</option>
+              </select>              
+              <div *ngIf="form.get('cidade')?.invalid && form.get('cidade')?.touched" class="text-danger cidade-error">Selecione a cidade.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="d-flex flex-column">
+              <label for="email" class="my-label">E-mail:</label>
+              <input type="email" id="email" placeholder="Ex: lucas.santos@hotmail.com" 
+                class="form-control" [class.is-invalid]="(botaoAvancarClicado && form.get('email')?.invalid) || (form.get('email')?.touched && form.get('email')?.hasError('invalidEmail'))" formControlName="email">
+              <div *ngIf="(botaoAvancarClicado && form.get('email')?.invalid) || (form.get('email')?.touched && form.get('email')?.hasError('invalidEmail'))" class="text-danger email-error">
+                {{ form.get('email')?.hasError('invalidEmail') ? 'E-mail inválido' : 'Informe seu e-mail' }}
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="d-flex flex-column">
+              <label for="telefone" class="my-label">Telefone:</label>
+              <input appMascaraTelefone type="text" id="telefone" placeholder="(__) _ ____-____" 
+                class="form-control" [class.is-invalid]="botaoAvancarClicado && form.get('telefone')?.invalid" formControlName="telefone" maxlength="16">
+              <div *ngIf="form.get('telefone')?.invalid && form.get('telefone')?.touched" class="text-danger telefone-error">Informe o seu telefone.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="d-flex justify-content-between p-3">
+          <button type="button" class="btn btn-danger" routerLink="/inicio">Voltar</button>
+          <button type="submit" class="btn btn-success" (click)="avancarClick()">Avançar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

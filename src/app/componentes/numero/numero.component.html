@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col-md-4 col-sm-6 text-center">
+            <div class="card p-3 m-2">
+                <h4 class="card-title">Para validar seu desconto, por favor informe:</h4>
+                <div class="form-check p-3">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <form [formGroup]="form">
+                            <label for="taxistaNumber" class="my-label p-1" id="label-1">Número do taxista:</label>
+                            <input type="text" formControlName="taxistaNumber" class="form-control" (input)="formatarTaxistaNumber($event)" maxlength="4">
+                            <div *ngIf="form.get('taxistaNumber')?.invalid && (form.get('taxistaNumber')?.touched || botaoAvancarClicado)" class="text-danger">
+                              Informe o número do taxista.
+                            </div>
+                            <div *ngIf="numeroTaxistaNaoCadastrado" class="text-danger">
+                                Número não cadastrado. Verifique!
+                            </div> 
+                            
+                            <label for="valorCorrida" class="my-label p-1" id="label-2">Valor da corrida:</label>
+                            <input type="text" formControlName="valorCorrida" [value]="valorCorridaFormatado" (input)="formatarValorInput($event)" class="form-control" maxlength="9">
+                            <div *ngIf="form.get('valorCorrida')?.invalid && (form.get('valorCorrida')?.touched || botaoAvancarClicado)" class="text-danger">
+                              Informe o valor total da corrida.
+                            </div>                                 
+                          </form>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between p-2">
+                    <button type="button" class="btn btn-danger" (click)=" voltarParaQuestionario()">Voltar</button>
+                    <button type="submit" class="btn btn-success" (click)="submitForm()">Avançar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+.container-padrao {
+    background-image: url('https://media.diariodosudoeste.com.br/2021/08/905d8f4b-foto-do-rel%C3%B3gio-marcando-3-e-meia.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-padrao {
+    color: black;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 10px;
+    
+    background: linear-gradient(45deg,  rgb(126, 191, 221), lightgrey, rgb(126, 191, 221));
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+.titulo, .sub-titulo {
+    padding:  15px;
+}
+
+.termos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    margin: auto;
+    
+    background-color: white;
+    border: 1px solid black;
+}
+
+.button-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; 
+}
+
+label {
+    padding-left: 3px;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+
+    .texto-padrao {
+        margin-top: 20%;
+        margin-left: 10%;
+        margin-right: 10%;
+
+        padding: 20px;
+    }
+    
+    .titulo, .sub-titulo {
+        font-size: 20px;
+    }
+
+    .termos {
+        padding: 10px;
+        font-size: 13px;
+        width: auto;
+    }
+  }

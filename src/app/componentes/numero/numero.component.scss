@@ -1,0 +1,31 @@
+.container {
+    background: linear-gradient(45deg,  rgb(126, 191, 221), lightgrey, rgb(126, 191, 221));
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+.card {
+    background: linear-gradient(45deg, lightgrey, rgb(126, 191, 221), lightgrey);
+    border: 1px solid black;
+}
+
+#label-1 {
+    white-space: nowrap;
+    font-weight: bold;
+
+    margin-right: 50%;
+}
+
+#label-2 {
+    white-space: nowrap;
+    font-weight: bold;
+
+    margin-right: 57%;
+}
+
+
+div.text-danger {
+    font-weight: bold;
+    margin-right: 25%;
+    white-space: nowrap;
+}

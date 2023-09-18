@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-6 d-flex align-items-center">
+            <div class="card p-3 m-2">
+                <h4 class="card-title">Por qual motivo você está visitando a cidade?</h4>
+                <div class="form-check flex-grow-1" [class.is-invalid]="formSubmitted && resposta1Control.invalid">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta1" id="opcao1_1"
+                            [checked]="resposta1Control.value === 'Viagem de trabalho'"
+                            (change)="resposta1Control.setValue('Viagem de trabalho')">
+                        <label class="form-check-label" for="opcao1_1">Viagem a trabalho</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta1" id="opcao2_1"
+                            [checked]="resposta1Control.value === 'Visitar parentes que moram aqui'"
+                            (change)="resposta1Control.setValue('Visitar parentes que moram aqui')">
+                        <label class="form-check-label" for="opcao2_1">Visitar parentes que moram aqui</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta1" id="opcao3_1"
+                            [checked]="resposta1Control.value === 'Conhecer os pontos turísticos da cidade'"
+                            (change)="resposta1Control.setValue('Conhecer os pontos turísticos da cidade')">
+                        <label class="form-check-label" for="opcao3_1">Conhecer a cidade</label>
+                    </div>
+
+                    <div *ngIf="formSubmitted && resposta1Control.invalid" class="text-danger">Selecione uma opção.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center">
+            <div class="card p-3 m-2">
+                <h4 class="card-title">Nesse tempo em que você vai passar na cidade, onde ficará hospedado?</h4>
+                <div class="form-check flex-grow-1" [class.is-invalid]="formSubmitted && resposta2Control.invalid">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta2" id="opcao1_1"
+                            [checked]="resposta2Control.value === 'Casa Própria'"
+                            (change)="resposta2Control.setValue('Casa Própria')">
+                        <label class="form-check-label" for="opcao1_1">Casa Própria</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta2" id="opcao2_1"
+                            [checked]="resposta2Control.value === 'Hotéis / Pousadas'"
+                            (change)="resposta2Control.setValue('Hotéis / Pousadas')">
+                        <label class="form-check-label" for="opcao2_1">Hotéis / Pousadas</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta2" id="opcao3_1"
+                            [checked]="resposta2Control.value === 'Casa de amigos / familiares'"
+                            (change)="resposta2Control.setValue('Casa de amigos / familiares')">
+                        <label class="form-check-label" for="opcao3_1">Casa de amigos / familiares</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta2" id="opcao4_1"
+                            [checked]="resposta2Control.value === 'Outros'"
+                            (change)="resposta2Control.setValue('Outros')">
+                        <label class="form-check-label" for="opcao4_1">Outros</label>
+                    </div>
+
+                    <div *ngIf="formSubmitted && resposta2Control.invalid" class="text-danger">Selecione uma opção.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center">
+            <div class="card p-3 m-2">
+                <h4 class="card-title">Você conhece os pontos turísticos da cidade?</h4>
+                <div class="form-check flex-grow-1" [class.is-invalid]="formSubmitted && resposta3Control.invalid">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta3" id="opcao1_1"
+                            [checked]="resposta3Control.value === 'Sim'" (change)="resposta3Control.setValue('Sim')">
+                        <label class="form-check-label" for="opcao1_1">Sim</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta3" id="opcao2_1"
+                            [checked]="resposta3Control.value === 'Não'" (change)="resposta3Control.setValue('Não')">
+                        <label class="form-check-label" for="opcao2_1">Não</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta3" id="opcao3_1"
+                            [checked]="resposta3Control.value === 'Alguns'"
+                            (change)="resposta3Control.setValue('Alguns')">
+                        <label class="form-check-label" for="opcao3_1">Alguns</label>
+                    </div>
+
+                    <div *ngIf="formSubmitted && resposta3Control.invalid" class="text-danger">Selecione uma opção.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center">
+            <div class="card p-3 m-2">
+                <h4 class="card-title">Você pretende visitar os pontos turísticos da cidade?</h4>
+                <div class="form-check flex-grow-1" [class.is-invalid]="formSubmitted && resposta4Control.invalid">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta4" id="opcao1_1"
+                            [checked]="resposta4Control.value === 'Sim'" (change)="resposta4Control.setValue('Sim')">
+                        <label class="form-check-label" for="opcao1_1">Sim</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta4" id="opcao2_1"
+                            [checked]="resposta4Control.value === 'Não'" (change)="resposta4Control.setValue('Não')">
+                        <label class="form-check-label" for="opcao2_1">Não</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta4" id="opcao3_1"
+                            [checked]="resposta4Control.value === 'Talvez'"
+                            (change)="resposta4Control.setValue('Talvez')">
+                        <label class="form-check-label" for="opcao3_1">Talvez</label>
+                    </div>
+
+                    <div *ngIf="formSubmitted && resposta4Control.invalid" class="text-danger">Selecione uma opção.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between p-3">
+        <button type="button" class="btn btn-danger" (click)="voltarParaCadastro()">Voltar</button>
+        <button type="submit" class="btn btn-success" (click)="avancar()">Avançar</button>
+    </div>
+</div>

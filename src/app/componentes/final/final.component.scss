@@ -1,0 +1,28 @@
+.container {
+    background: linear-gradient(45deg,  rgb(126, 191, 221), lightgrey, rgb(126, 191, 221));
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+.card {
+    background: linear-gradient(45deg, lightgrey, rgb(126, 191, 221), lightgrey);
+    border: 1px solid black;
+}
+
+// .form-check {
+//     white-space: nowrap;
+// }
+
+span {
+    font-weight: bold;
+}
+
+.nome-service, .valor-corrida, .desconto, .valor-desconto, .nomeTaxista {
+    font-weight: normal;
+}
+
+p {
+    font-size: 13px;
+    color: red;
+}
+
