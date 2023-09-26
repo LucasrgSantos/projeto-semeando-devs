@@ -26,6 +26,13 @@
                         <label class="form-check-label" for="opcao3_1">Conhecer a cidade</label>
                     </div>
 
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="resposta1" id="opcao4_1"
+                            [checked]="resposta1Control.value === 'Outros'"
+                            (change)="resposta1Control.setValue('Outros')">
+                        <label class="form-check-label" for="opcao4_1">Outros</label>
+                    </div>
+
                     <div *ngIf="formSubmitted && resposta1Control.invalid" class="text-danger">Selecione uma opção.
                     </div>
                 </div>
@@ -37,31 +44,31 @@
                 <h4 class="card-title">Nesse tempo em que você vai passar na cidade, onde ficará hospedado?</h4>
                 <div class="form-check flex-grow-1" [class.is-invalid]="formSubmitted && resposta2Control.invalid">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta2" id="opcao1_1"
+                        <input class="form-check-input" type="radio" name="resposta2" id="opcao1_2"
                             [checked]="resposta2Control.value === 'Casa Própria'"
                             (change)="resposta2Control.setValue('Casa Própria')">
-                        <label class="form-check-label" for="opcao1_1">Casa Própria</label>
+                        <label class="form-check-label" for="opcao1_2">Casa Própria</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta2" id="opcao2_1"
+                        <input class="form-check-input" type="radio" name="resposta2" id="opcao2_2"
                             [checked]="resposta2Control.value === 'Hotéis / Pousadas'"
                             (change)="resposta2Control.setValue('Hotéis / Pousadas')">
-                        <label class="form-check-label" for="opcao2_1">Hotéis / Pousadas</label>
+                        <label class="form-check-label" for="opcao2_2">Hotéis / Pousadas</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta2" id="opcao3_1"
+                        <input class="form-check-input" type="radio" name="resposta2" id="opcao3_2"
                             [checked]="resposta2Control.value === 'Casa de amigos / familiares'"
                             (change)="resposta2Control.setValue('Casa de amigos / familiares')">
-                        <label class="form-check-label" for="opcao3_1">Casa de amigos / familiares</label>
+                        <label class="form-check-label" for="opcao3_2">Casa de amigos / familiares</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta2" id="opcao4_1"
+                        <input class="form-check-input" type="radio" name="resposta2" id="opcao4_2"
                             [checked]="resposta2Control.value === 'Outros'"
                             (change)="resposta2Control.setValue('Outros')">
-                        <label class="form-check-label" for="opcao4_1">Outros</label>
+                        <label class="form-check-label" for="opcao4_2">Outros</label>
                     </div>
 
                     <div *ngIf="formSubmitted && resposta2Control.invalid" class="text-danger">Selecione uma opção.
@@ -75,22 +82,22 @@
                 <h4 class="card-title">Você conhece os pontos turísticos da cidade?</h4>
                 <div class="form-check flex-grow-1" [class.is-invalid]="formSubmitted && resposta3Control.invalid">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta3" id="opcao1_1"
+                        <input class="form-check-input" type="radio" name="resposta3" id="opcao1_3"
                             [checked]="resposta3Control.value === 'Sim'" (change)="resposta3Control.setValue('Sim')">
-                        <label class="form-check-label" for="opcao1_1">Sim</label>
+                        <label class="form-check-label" for="opcao1_3">Sim</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta3" id="opcao2_1"
+                        <input class="form-check-input" type="radio" name="resposta3" id="opcao2_3"
                             [checked]="resposta3Control.value === 'Não'" (change)="resposta3Control.setValue('Não')">
-                        <label class="form-check-label" for="opcao2_1">Não</label>
+                        <label class="form-check-label" for="opcao2_3">Não</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta3" id="opcao3_1"
+                        <input class="form-check-input" type="radio" name="resposta3" id="opcao3_3"
                             [checked]="resposta3Control.value === 'Alguns'"
                             (change)="resposta3Control.setValue('Alguns')">
-                        <label class="form-check-label" for="opcao3_1">Alguns</label>
+                        <label class="form-check-label" for="opcao3_3">Alguns</label>
                     </div>
 
                     <div *ngIf="formSubmitted && resposta3Control.invalid" class="text-danger">Selecione uma opção.
@@ -104,22 +111,22 @@
                 <h4 class="card-title">Você pretende visitar os pontos turísticos da cidade?</h4>
                 <div class="form-check flex-grow-1" [class.is-invalid]="formSubmitted && resposta4Control.invalid">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta4" id="opcao1_1"
+                        <input class="form-check-input" type="radio" name="resposta4" id="opcao1_4"
                             [checked]="resposta4Control.value === 'Sim'" (change)="resposta4Control.setValue('Sim')">
-                        <label class="form-check-label" for="opcao1_1">Sim</label>
+                        <label class="form-check-label" for="opcao1_4">Sim</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta4" id="opcao2_1"
+                        <input class="form-check-input" type="radio" name="resposta4" id="opcao2_4"
                             [checked]="resposta4Control.value === 'Não'" (change)="resposta4Control.setValue('Não')">
-                        <label class="form-check-label" for="opcao2_1">Não</label>
+                        <label class="form-check-label" for="opcao2_4">Não</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="resposta4" id="opcao3_1"
+                        <input class="form-check-input" type="radio" name="resposta4" id="opcao3_4"
                             [checked]="resposta4Control.value === 'Talvez'"
                             (change)="resposta4Control.setValue('Talvez')">
-                        <label class="form-check-label" for="opcao3_1">Talvez</label>
+                        <label class="form-check-label" for="opcao3_4">Talvez</label>
                     </div>
 
                     <div *ngIf="formSubmitted && resposta4Control.invalid" class="text-danger">Selecione uma opção.
